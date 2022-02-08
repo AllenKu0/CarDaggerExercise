@@ -3,19 +3,22 @@ package com.example.cardagger;
 import android.util.Log;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 public class PetrolEngine implements Engine{
     private static final String TAG = "PetrolEngineModule";
     private int horsePower;
-    private int engineCapicity;
+    private int engineCapacity;
     @Inject
-    public PetrolEngine(int horsePower,int engineCapicity){
+    public PetrolEngine(@Named("horsePower") int horsePower,
+                        @Named("engineCapacity")  int engineCapacity){
         this.horsePower = horsePower;
-        this.engineCapicity = engineCapicity;
-
+        this.engineCapacity = engineCapacity;
     }
     @Override
     public void start() {
-        Log.d(TAG, "PetrolEngine starting ... ");
+        Log.d(TAG, "PetrolEngine started " +
+                        "\nHorsePower" + horsePower +
+                        "\nEngineCapacity" + engineCapacity);
     }
 }

@@ -14,8 +14,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         CarComponent component = DaggerCarComponent.builder()
-                .dieselEngineModule(new DieselEngineModule(100))
-                .build() ;
+                .horsePower(140)
+                .engineCapacity(1400)
+                .build();
         /**
          * 配合上面的Inject標籤，因為欄位的標籤不會自動呼叫，要有建構元才會。
          */
