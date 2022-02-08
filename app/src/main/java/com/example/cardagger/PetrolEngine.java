@@ -6,9 +6,12 @@ import javax.inject.Inject;
 
 public class PetrolEngine implements Engine{
     private static final String TAG = "PetrolEngineModule";
-
+    private int horsePower;
+    private int engineCapicity;
     @Inject
-    public PetrolEngine(){
+    public PetrolEngine(int horsePower,int engineCapicity){
+        this.horsePower = horsePower;
+        this.engineCapicity = engineCapicity;
 
     }
     @Override

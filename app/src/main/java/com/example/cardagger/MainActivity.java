@@ -13,7 +13,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CarComponent component = DaggerCarComponent.create();
+        CarComponent component = DaggerCarComponent.builder()
+                .dieselEngineModule(new DieselEngineModule(100))
+                .build() ;
         /**
          * 配合上面的Inject標籤，因為欄位的標籤不會自動呼叫，要有建構元才會。
          */
