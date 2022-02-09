@@ -4,10 +4,12 @@ import android.nfc.Tag;
 import android.util.Log;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 public class Car {
     private static final String TAG = "Car";
 //    @Inject Engine engine;   //建構元就不用Engine
+    private Driver driver;
     private Engine engine;
     private Wheels wheels;
 
@@ -18,7 +20,8 @@ public class Car {
      * Inject的順序為，建構元、欄位、函數
      */
     @Inject
-    public Car(Engine engine, Wheels wheels) {
+    public Car(Driver driver,Engine engine, Wheels wheels) {
+        this.driver = driver;
         this.engine = engine;
         this.wheels = wheels;
     }
@@ -29,6 +32,6 @@ public class Car {
 
     public void drive(){
         engine.start();
-        Log.d(TAG, "driving....");
+        Log.e(TAG, driver + " drives "+this);
     }
 }

@@ -1,5 +1,7 @@
 package com.example.cardagger;
 
+import javax.inject.Inject;
+
 import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
@@ -12,10 +14,12 @@ public class DieselEngineModule {
     public DieselEngineModule(int horsePower) {
         this.horsePower = horsePower;
     }
+
     @Provides
     int provideHorsePower(){
         return horsePower;
     }
+
     @Provides
     Engine provideEngine(DieselEngine engine){
         return engine;

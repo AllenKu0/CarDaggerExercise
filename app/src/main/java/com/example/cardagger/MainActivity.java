@@ -7,7 +7,7 @@ import android.os.Bundle;
 import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
-    @Inject Car car;
+    @Inject Car car1,car2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
          * 配合上面的Inject標籤，因為欄位的標籤不會自動呼叫，要有建構元才會。
          */
         component.inject(this);
-        car.drive();
+        car1.drive();
+        car2.drive();
     }
 }
