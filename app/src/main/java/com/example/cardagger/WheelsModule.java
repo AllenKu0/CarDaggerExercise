@@ -15,7 +15,7 @@ public abstract class WheelsModule {
         return new Rims();
     }
 
-    @Singleton
+//    @PerActivity
     @Provides
     static Tires provideTires(){
         Tires tires = new Tires();

@@ -3,10 +3,6 @@ package com.example.cardagger;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-@Singleton
 public class Driver {
-    @Inject
-    public Driver(){
-
-    }
+    //當成第三方套件，音為不知道內容所以不能下Inject
 }

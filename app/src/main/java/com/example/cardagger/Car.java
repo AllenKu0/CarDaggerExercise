@@ -6,6 +6,7 @@ import android.util.Log;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+@PerActivity
 public class Car {
     private static final String TAG = "Car";
 //    @Inject Engine engine;   //建構元就不用Engine
